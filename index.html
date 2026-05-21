@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="container py-5">
+        <div class="header text-center">
+            <h1 class="baslik mb-2">🍅 Pomodoro</h1>
+            <p class="alt-baslik mb-4">Odaklan, dinlen, tekrarla.</p>
+            <div class="d-flex justify-content-center gap-2 mb-5">
+                <button class="mod-btn aktif" data-mod="pomodoro">🍅 Pomodoro</button>
+                <button class="mod-btn" data-mod="uzun">🛋️ Uzun Mola</button>
+                <button class="mod-btn" data-mod="kisa">☕ Kısa Mola</button>
+            </div>
+        </div>
+
+
+        <div class="sayac-kart mx-auto mb-4">
+            <div class="sayac-cember">
+                <svg viewBox="0 0 200 200">
+                <circle class="cember-arka" cx="100" cy="100" r="88" />
+                <circle class="cember-on" id="ilerleme" cx="100" cy="100" r="88" />
+                </svg>
+                <div class="sayac-sure" id="sure-goster">25:00</div>
+            </div>
+        </div>
+        
+        <div id="pomodoro-sayac" class="text-center mb-3"></div>
+
+        <div class="d-flex justify-content-center gap-3 mb-5">
+            <button class="kontrol-btn" id="basla-btn" onclick="baslatDurdur()">▶ Başla</button>
+            <button class="kontrol-btn ikincil" onclick="sifirla()">↺ Sıfırla</button>
+        </div>
+
+        <div class="ayar-kart mx-auto">
+            <p class="ayar-baslik">⚙️ Süreleri Özelleştir <span class="ayar-not">(dakika)</span></p>
+            <div class="row g-3">
+                <div class="col-4">
+                    <label class="ayar-label" for="pomodoro-sure">🍅 Pomodoro</label>
+                    <input type="number" class="form-control ayar-input" id="pomodoro-sure" value="25" min="1" max="90">
+                </div>
+                <div class="col-4">
+                    <label class="ayar-label" for="uzun-sure">🛋️ Uzun Mola</label>
+                    <input type="number" class="form-control ayar-input" id="uzun-sure" value="15" min="1" max="60" />
+                </div>
+                <div class="col-4">
+                    <label class="ayar-label" for="kisa-sure">☕ Kısa Mola</label>
+                    <input type="number" class="form-control ayar-input" id="kisa-sure" value="5" min="1" max="30">
+                </div>
+            </div>
+            <button class="kaydet-btn mt-3" onclick="sureyiKaydet()">Kaydet</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
